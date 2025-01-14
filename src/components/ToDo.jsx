@@ -100,7 +100,7 @@ const ToDo = () => {
                     onKeyDown={(e) => e.key === 'Enter' && add()} // Detecta la tecla Enter y crea una nueva tarea sin presionar el botón
                 />
                 <button
-                    className=" border-none rounded-full bg-gradient-to-r from-green-800 to-green-600 w-28 h-14 text-white text-xl font-medium cursor-pointer transition-all duration-600 hover:from-pink-500 hover:to-orange-500 "
+                    className=" border-none rounded-full bg-gradient-to-r from-green-800 to-green-600 w-28 h-14 text-white text-xl font-medium cursor-pointer transition-all hover:from-pink-500 hover:to-orange-500 "
                     onClick={add}
                 >
                     +
