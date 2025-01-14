@@ -80,34 +80,35 @@ const ToDo = () => {
         };
 
         fetchTasks();
-    }, []); // Solo se ejecuta una vez al cargar el componente
+    }, []); 
 
     return (
-        <div className="bg-white place-self-center w-11/12 max-w-md flex flex-col p-7 min-h-[550px] rounded-xl shadow-2xl	">
-            {/*------- título -------*/}
-            <section className="flex items-center mt-7 gap-2">
+        <div className="bg-white place-self-center w-11/12 max-w-md flex flex-col rounded-xl shadow-2xl h-5/6 sm:h-4/6 min-w-2.5">
+            {/*------- Título -------*/}
+            <section className="flex items-center p-5 gap-1">
                 <h1 className="text-3xl font-sans font-bold">To Do List</h1>
             </section>
 
-            {/*------- input -------*/}
-            <section className="flex item-center my-7 bg-slate-100 rounded-full">
+            {/*------- Input -------*/}
+            <section className="flex items-center bg-slate-100 my-7 rounded-full m-4">
+
                 <input
                     ref={inputRef}
-                    className="bg-transparent border-o outline-none flex-1 h-14 pl-6 pr-2 placeholder:text-slate-600"
+                    className="bg-transparent border-o outline-none flex-1 h-14 pl-6 pr-2 placeholder:text-slate-600 text-sm"
                     type="text"
                     placeholder="Añade una tarea :)"
-                    onKeyDown={(e) => e.key === 'Enter' && add()} // Detecta la tecla Enter
+                    onKeyDown={(e) => e.key === 'Enter' && add()} // Detecta la tecla Enter y crea una nueva tarea sin presionar el botón
                 />
                 <button
-                    className="border-none rounded-full bg-gradient-to-r from-green-800 to-green-600 w-32 h-14 text-white text-large font-medium cursor-pointer transition-all duration-300 hover:from-pink-500 hover:to-orange-500"
+                    className=" border-none rounded-full bg-gradient-to-r from-green-800 to-green-600 w-28 h-14 text-white text-xl font-medium cursor-pointer transition-all duration-600 hover:from-pink-500 hover:to-orange-500 "
                     onClick={add}
                 >
-                    AÑADIR +
+                    +
                 </button>
             </section>
 
-            {/*------- toDo -------*/}
-            <section>
+            {/*------- ToDo list (scrollable) -------*/}
+            <section className="flex-1 overflow-y-auto px-4">
                 {toDoList.map((item) => (
                     <ToDo_Items
                         key={item.id}

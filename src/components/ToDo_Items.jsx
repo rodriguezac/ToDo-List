@@ -5,12 +5,12 @@ import borrar from '../assets/borrar.png'
 
 const ToDo_Items= ({text, isComplete, id,deleteToDo, toggle})=>{
   return (
-    <div className='flex items-center my-3 gap-2'>
+    <div className='flex items-center my-3 gap-2 px-5'>
 
       <section onClick={()=> {toggle (id)}} className='flex flex-1 items-center cursor-pointer' >
 
-        <img className='w-7' src={isComplete ? done: undone} alt="Tarea hecha icon " />
-        <p className={`text-slate-700 ml-4 text-[17px] ${isComplete ?"line-through":""}`}> {text}</p>
+        <img className='w-7 sm: max-w-5' src={isComplete ? done: undone} alt="Tarea hecha icon " />
+        <p className={`text-slate-700 ml-4 text-[17px] sm: text-xs ${isComplete ?"line-through":""}`}> {text}</p>
 
       </section>
 
